@@ -1,0 +1,169 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+
+}
+.row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+ul{
+    list-style-type: none;
+
+}
+
+
+
+ul > li > a:after{
+    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0%;
+    position: relative;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+ul > li > a:active{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+ul > li > a:link{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+ul > li > a:visited{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+ul > li > a:hover{
+    width: 50%; 
+    left: 50%; 
+
+}
+
+ul > li > a:hover::after{
+    content: "";
+    background: #ffffff;
+    transition: width 0.3s ease 0s left 0.3s ease 0s;
+    height: 2px;
+    left: 50%;
+    width: 50%;
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("img/viandos.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    font-size: 5rem;
+    color: #ffffff;
+    font-weight: 1;
+    padding-top: 10%;
+    padding-left: 10%;
+    text-align: left;
+}
+
+.row > img {
+    padding: 1% 3%;
+}
+
+
+/* Hmaburger Button for navbar */
+.hamburger-container-button{
+    display: block;
+    margin: 10px 0;
+    position:absolute;
+    left: 90%;
+    cursor:pointer;
+
+
+}
+.horizontal-line{
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.row > input[type="checkbox"]{
+    display: block;
+    position:relative;
+    width: 50px;
+    height: 50px;
+    left: 38%;
+    z-index: 1;
+    opacity: 0;
+
+}
+
+
+
+@media screen and (min-width: 600px){
+    ul > li{
+        display: inline-block;
+        padding: 3rem 2.6rem;
+        font-size: 2rem;
+        color: #ffffff;  
+    }
+    .hamburger-container-button{
+        display: none;
+    }
+    .row > input[type="checkbox"]{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    ul > li{
+        display: none;
+        
+    }
+    .row > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+      }
+      nav > .nav-links > a {
+        display: block;
+        width: 100%;
+      }
+      nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+      }
+      nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+      }
+
+}
