@@ -5,6 +5,7 @@
 html{
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 
 }
 
@@ -16,6 +17,7 @@ header{
     height: 100vh;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 h2 {
@@ -31,7 +33,6 @@ h2 {
 .nav {
     height: 50px;
     width: 100%;
-    position: relative;
   }
   
   .nav > .nav-header {
@@ -201,9 +202,10 @@ h2 {
       height: 0px;
       transition: all 0.3s ease-in;
       overflow-y: hidden;
-      top: 50px;
+      top: 60px;
       left: 0px;
       z-index: 1;
+      padding: 0;
     }
     .nav > .nav-links > a {
       display: block;
@@ -222,6 +224,11 @@ h2 {
     }
     .ensavoir-btn{
         margin-top: 2%;
+    }
+}
+@media (max-width:680px) and (min-width: 600px){
+    .buttons{
+        padding: 5% 10%;
     }
 }
 
@@ -323,7 +330,8 @@ section h1::after{
     filter: brightness(90%);
 }
 .section-meals figure{
-    height: 100%;
+    position: relative;
+    height:100%;
     width: 100%;
     object-fit: none;
 }
@@ -389,7 +397,7 @@ section h1::after{
 }
 
 .section-avis > h1{
-    color: #fff;
+    color: #ffffff;
 }
 
 .comments{
@@ -403,10 +411,13 @@ section h1::after{
 
 .comments > div {
     margin-right: 5%;
+    
 }
 .client-info{
     position: relative;
     padding: 5% 0;
+    color: #ffffff;
+
 }
 .comments  img {
     height: 50px;
@@ -447,6 +458,10 @@ form > span > input{
     height: 20px;
 }
 
+.section-contact{
+    padding-bottom: 10%;
+}
+
 .section-contact > h2 {
     font-size: 2.5rem;
     color: black;
@@ -469,14 +484,34 @@ footer{
 footer > div{
     padding-top: 10%;
     width: 40%;
+    text-align: center;
 }
 
 .social-media-footer{
     display: flex;
     flex-direction: row;
     position: relative;
+    padding-left: 10%;
 }
 
 .social-media-footer > li{
+    position: relative;
     list-style: none;
+    margin-left: 5%;
+}
+.social-media-footer > li > img{
+    cursor: pointer;
+}
+
+footer p{
+    margin-top: 5%;
+}
+
+@media(max-width:680px){
+    footer{
+        flex-direction: column;
+    }
+    footer > div{
+        padding-left: 30%;
+    }
 }
